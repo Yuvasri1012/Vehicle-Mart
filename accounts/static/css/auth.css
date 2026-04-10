@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+}
+
+/* Form Card */
+.auth-container {
+  width: 380px;
+  background: #ffffff;
+  padding: 35px 30px;
+  border-radius: 10px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.auth-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+/* Input Group */
+.input-group {
+  margin-bottom: 18px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #555;
+}
+
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+  border-color: #2a5298;
+  box-shadow: 0 0 5px rgba(42, 82, 152, 0.4);
+}
+
+/* Button */
+.auth-btn {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background: #2a5298;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.auth-btn:hover {
+  background: #1e3c72;
+}
+
+/* Bottom Link */
+.bottom-text {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.bottom-text a {
+  color: #2a5298;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.close-btn1 {
+  position: absolute;
+  top: 15px;
+  right: 20px; 
+  font-size: 24px;
+  text-decoration: none;    
+  color: rgb(62, 59, 59); 
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
+
+.close-btn1:hover {
+  color: rgb(154, 149, 149);
+  transform: scale(1.2);
+}
