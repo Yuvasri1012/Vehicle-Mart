@@ -105,23 +105,6 @@ def add_to_cart(request, id):
 
     return redirect(request.META.get('HTTP_REFERER', 'home'))
 
-# def cart_view(request):
-#     cart = request.session.get('cart', {})
-#     products = []
-#     total = 0
-
-#     for id, qty in cart.items():
-#         product = Product.objects.get(id=id)
-#         product.qty = qty
-#         product.total_price = int(product.price) * qty
-#         total += product.total_price
-#         products.append(product)
-
-#     return render(request, 'cart.html', {
-#         'products': products,
-#         'total': total
-#     })
-
 def cart_view(request):
     cart = request.session.get('cart', {})
     products = []
@@ -152,3 +135,7 @@ def remove_from_cart(request, id):
 
     request.session['cart'] = cart
     return redirect('cart')
+
+def indian_format(amount):
+    return "{:,}".format(amount)
+
