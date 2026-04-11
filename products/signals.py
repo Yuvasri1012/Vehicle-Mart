@@ -1,11 +1,14 @@
 from django.db.models.signals import post_migrate
 from django.dispatch import receiver
-from .models import Category
 
 @receiver(post_migrate)
 def create_default_categories(sender, **kwargs):
     if sender.name != "products":
         return
+
+    from django.apps import apps
+    Category = apps.get_model("products", "Category")
+
     default_categories = [
         "Car","Bike","Scooter","Bicycle","Electric Car","Electric Bike",
         "Auto Rickshaw","Bus","Truck","Van","SUV","Pickup",
