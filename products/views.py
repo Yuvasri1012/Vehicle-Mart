@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from .models import Category, Product
 from django.contrib import messages
+from django.db import migrations
 
 
 @login_required(login_url='login_page')
@@ -139,3 +140,24 @@ def remove_from_cart(request, id):
 def indian_format(amount):
     return "{:,}".format(amount)
 
+def seed_categories(apps, schema_editor):
+    Category = apps.get_model("products", "Category")
+
+    default_categories = [
+        "Car","Bike","Scooter","Bicycle","Electric Car","Electric Bike",
+        "Auto Rickshaw","Bus","Truck","Van","SUV","Pickup",
+        "Tractor","Ambulance","Luxury Car","Sports Bike"
+    ]
+
+    for cat in default_categories:
+        Category.objects.get_or_create(name=cat)
+
+class Migration(migrations.Migration):
+
+    dependencies = [
+        ('products', '0001_initial'),
+    ]
+
+    operations = [
+        migrations.RunPython(seed_categories),
+    ]
