@@ -4,6 +4,8 @@ from .models import Category
 
 @receiver(post_migrate)
 def create_default_categories(sender, **kwargs):
+    if sender.name != "products":
+        return
     default_categories = [
         "Car","Bike","Scooter","Bicycle","Electric Car","Electric Bike",
         "Auto Rickshaw","Bus","Truck","Van","SUV","Pickup",
