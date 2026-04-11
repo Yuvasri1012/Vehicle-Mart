@@ -87,7 +87,6 @@ DATABASES = {
 "default": dj_database_url.config( 
         default=os.getenv("DATABASE_URL"), 
         conn_max_age=600,
-        ssl_require=True # Render PostgreSQL requires SSL
 )
 }
 
